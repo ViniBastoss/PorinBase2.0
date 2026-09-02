@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resultados — PoringBase</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root { --ink:#17211d; --paper:#f4efe5; --white:#fff; --green:#173426; --gold:#c49a45; --serif:"Cinzel",Georgia,serif; --sans:"Inter",sans-serif; }
+    * { box-sizing:border-box; }
+    body { margin:0; color:var(--ink); background:var(--paper); font-family:var(--sans); }
+    header { padding:20px; color:var(--white); background:var(--green); }
+    header div, main { width:min(100% - 32px,1060px); margin-inline:auto; }
+    header div { display:flex; align-items:center; justify-content:space-between; gap:20px; }
+    a { color:inherit; }
+    .brand { display:inline-flex; align-items:center; text-decoration:none; }
+    .brand-logo { display:block; width:min(100%, 290px); height:auto; }
+    main { padding:70px 0; }
+    h1 { margin:0 0 12px; font-family:var(--serif); font-size:clamp(2.2rem,6vw,4rem); }
+    .query-box { margin-top:30px; padding:24px; background:var(--white); border-top:3px solid var(--gold); box-shadow:0 16px 40px rgba(23,33,29,.1); }
+    code { color:#6d4a0e; }
+  </style>
+</head>
+<body>
+  <header>
+    <div>
+      <a class="brand" href="index.html" aria-label="Voltar para a página inicial"><img class="brand-logo" src="./assets/brand-poringbase.png" alt="Poring Base — O Compêndio de Rune-Midgard"></a>
+      <a href="index.html">← Voltar para a home</a>
+    </div>
+  </header>
+
+  <main>
+    <p>Pesquisa no compêndio</p>
+    <h1 id="result-title">Resultados</h1>
+
+    <section class="query-box">
+      <p id="result-description"></p>
+      <p>Esta página já recebe a categoria e o termo pesquisado. Depois, você pode usar esses valores para filtrar seu JSON de monstros, itens, cartas ou mapas.</p>
+      <p>Exemplo técnico: <code>resultados.html?categoria=monstros&amp;q=Bafomé</code></p>
+    </section>
+  </main>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const category = params.get('categoria') || params.get('tipo') || 'todos';
+    const query = params.get('q') || 'nenhum termo';
+
+    document.querySelector('#result-title').textContent = query;
+    document.querySelector('#result-description').textContent = `Categoria: ${category} — termo pesquisado: ${query}`;
+  </script>
+</body>
+</html>

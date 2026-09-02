@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="PoringBase — O Compêndio de Rune-Midgard.">
+  <title>PoringBase — O Compêndio de Rune-Midgard</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="site-header" id="topo">
+    <div class="header-inner container">
+      <a class="brand" href="#inicio" aria-label="Ir para o início">
+        <img class="brand-logo" src="./assets/brand-poringbase.png" alt="Poring Base — O Compêndio de Rune-Midgard">
+      </a>
+
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-navigation" aria-label="Abrir menu">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="main-navigation" id="main-navigation" aria-label="Navegação principal">
+        <a class="nav-link active" href="#inicio">Início</a>
+        <a class="nav-link" href="#novidades">Novidades</a>
+        <a class="nav-link" href="#compendios">Compêndios</a>
+        <a class="nav-link" href="#mundo">Mundo</a>
+        <a class="nav-link" href="#sleeping-forest">Sleeping Forest</a>
+        <a class="nav-link" href="#sobre">Sobre</a>
+      </nav>
+
+    </div>
+  </header>
+
+  <main>
+    <section class="hero section-observed" id="inicio">
+      <div class="hero-background" aria-hidden="true"></div>
+      <div class="hero-vignette" aria-hidden="true"></div>
+      <div class="hero-particles" aria-hidden="true"></div>
+
+      <div class="hero-content container">
+        <p class="eyebrow"><span></span>O legado da Sleeping Forest<span></span></p>
+
+        <h1>O Compêndio de <strong>Rune-Midgard</strong></h1>
+
+        <div class="title-divider" aria-hidden="true"><span></span><i></i><span></span></div>
+
+        <p class="hero-description">
+          Seu guia sobre monstros, itens, cartas, mapas e histórias do universo clássico de Ragnarok Online.
+        </p>
+
+        <form class="search-panel" id="busca" action="resultados.html" method="get">
+          <label class="sr-only" for="search-category">Categoria</label>
+          <select id="search-category" name="categoria" aria-label="Categoria da busca">
+            <option value="todos">Todos</option>
+            <option value="monstros">Monstros</option>
+            <option value="itens">Itens</option>
+            <option value="cartas">Cartas</option>
+            <option value="mapas">Mapas</option>
+          </select>
+
+          <label class="sr-only" for="search-input">O que você procura?</label>
+          <input id="search-input" name="q" type="search" autocomplete="off" placeholder="Pesquise por MVPs, cartas, itens ou mapas...">
+
+          <button type="submit"><span aria-hidden="true">⌕</span>Buscar</button>
+
+          <div class="search-suggestions" id="search-suggestions" role="listbox" hidden>
+            <button type="button" data-value="Bafomé"><span>♛</span><div><strong>Bafomé</strong><small>Monstro MVP</small></div></button>
+            <button type="button" data-value="Carta Raydric"><span>◇</span><div><strong>Carta Raydric</strong><small>Carta</small></div></button>
+            <button type="button" data-value="Torre sem Fim"><span>▥</span><div><strong>Torre sem Fim</strong><small>Instância</small></div></button>
+          </div>
+        </form>
+
+        <div class="popular-searches" aria-label="Buscas populares">
+          <span>Buscas populares:</span>
+          <button type="button" data-search="Bafomé">♛ Bafomé</button>
+          <button type="button" data-search="Carta Raydric">◇ Carta Raydric</button>
+          <button type="button" data-search="Torre sem Fim">▥ Torre sem Fim</button>
+          <button type="button" data-search="Drake">♞ Drake</button>
+          <button type="button" data-search="Equipamentos de Sniper">⌁ Equipamentos de Sniper</button>
+        </div>
+
+        <a class="scroll-indicator" href="#novidades"><span>Role para explorar</span><i aria-hidden="true"></i></a>
+      </div>
+    </section> 
+
+     <section class="pb-news section-observed" id="novidades"  aria-label="Novidades">
+  
+    <div class="pb-news__inner">
+      <div class="pb-news__carousel-col">
+        <div class="pb-carousel" data-autoplay="true" data-delay="6000" aria-label="Carrossel de novidades da Sleeping Forest">
+          <div class="pb-carousel__frame">
+            <span class="pb-frame-corner pb-frame-corner--top-left" aria-hidden="true">✤</span>
+            <span class="pb-frame-corner pb-frame-corner--top-right" aria-hidden="true">✤</span>
+            <span class="pb-frame-corner pb-frame-corner--bottom-left" aria-hidden="true">✤</span>
+            <span class="pb-frame-corner pb-frame-corner--bottom-right" aria-hidden="true">✤</span>
+
+            <div class="pb-carousel__viewport">
+              <div class="pb-carousel__track">
+                <a class="pb-carousel__slide is-active" href="#contato" aria-label="Ir para contato">
+                  <img src="assets/novidades/contato.png" alt="Banner de contato com personagem Kafra e a frase: Tem alguma dúvida ou sugestão? Entre em contato!" />
+                </a>
+                <a class="pb-carousel__slide" href="#projeto" aria-label="Ir para redes e projeto">
+                  <img src="assets/novidades/projeto.png" alt="Banner da Sleeping Forest com bandeira e ícones de Instagram, TikTok e GitHub." />
+                </a>
+                <a class="pb-carousel__slide" href="#youtube" aria-label="Ir para canal do YouTube">
+                  <img src="assets/novidades/youtube.png" alt="Banner da Sleeping Forest convidando para acompanhar o projeto no YouTube." />
+                </a>
+                <a class="pb-carousel__slide" href="#temporario" aria-label="Ir para banner temporário">
+                  <img src="assets/novidades/temporario.png" alt="Banner temporário com arte em estilo Ragnarok e tela de login do jogo." />
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <button class="pb-carousel__arrow pb-carousel__arrow--prev" type="button" aria-label="Slide anterior">‹</button>
+          <button class="pb-carousel__arrow pb-carousel__arrow--next" type="button" aria-label="Próximo slide">›</button>
+
+          <div class="pb-carousel__dots" role="tablist" aria-label="Seleção de slide">
+            <button class="pb-carousel__dot is-active" type="button" role="tab" aria-selected="true" aria-label="Abrir slide 1"></button>
+            <button class="pb-carousel__dot" type="button" role="tab" aria-selected="false" aria-label="Abrir slide 2"></button>
+            <button class="pb-carousel__dot" type="button" role="tab" aria-selected="false" aria-label="Abrir slide 3"></button>
+            <button class="pb-carousel__dot" type="button" role="tab" aria-selected="false" aria-label="Abrir slide 4"></button>
+          </div>
+        </div>
+      </div>
+
+      <div class="pb-news__updates">
+        <div class="pb-news__heading-row">
+          <h2 class="pb-news__title" id="pb-news-title">News</h2>
+          <a class="pb-news__more" href="#todas-as-novidades">Ver todas</a>
+        </div>
+
+        <ul class="pb-updates-list">
+          <li class="pb-update-item">
+            <span class="pb-update-item__tag tag-site">SITE</span>
+            <span class="pb-update-item__text">Nova página de equipamentos adicionada</span>
+            <time class="pb-update-item__date" datetime="2026-08-01">01/08/2026</time>
+          </li>
+          <li class="pb-update-item">
+            <span class="pb-update-item__tag tag-database">DATABASE</span>
+            <span class="pb-update-item__text">Afinidades elementais revisadas</span>
+            <time class="pb-update-item__date" datetime="2026-07-29">29/07/2026</time>
+          </li>
+          <li class="pb-update-item">
+            <span class="pb-update-item__tag tag-ajuste">AJUSTE</span>
+            <span class="pb-update-item__text">Carrossel da seção de novidades reformulado</span>
+            <time class="pb-update-item__date" datetime="2026-07-28">28/07/2026</time>
+          </li>
+          <li class="pb-update-item">
+            <span class="pb-update-item__tag tag-servidor">SERVIDOR</span>
+            <span class="pb-update-item__text">NPC de Prontera atualizado</span>
+            <time class="pb-update-item__date" datetime="2026-07-25">25/07/2026</time>
+          </li>
+          <li class="pb-update-item">
+            <span class="pb-update-item__tag tag-conteudo">CONTEÚDO</span>
+            <span class="pb-update-item__text">Perfil de Ewen adicionado</span>
+            <time class="pb-update-item__date" datetime="2026-07-22">22/07/2026</time>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+    <section class="catalog section-observed" id="compendios">
+      <div class="container">
+        <div class="section-heading centered">
+          <p class="section-kicker">Descobertas recentes</p>
+          <h2>Últimos Compêndios Catalogados</h2>
+          <p>Uma amostra do que já foi registrado pelos estudiosos e aventureiros da PoringBase.</p>
+        </div>
+
+        <div class="catalog-grid">
+          <article class="catalog-card">
+            <div class="card-media" style="--card-image: url('./assets/bafome.jpg');" role="img" aria-label="Bafomé"><span class="card-level">MVP</span></div>
+            <div class="card-content">
+              <div class="card-meta"><span>♛</span><small>Sombrio • Grande</small></div>
+              <h3>Bafomé</h3>
+              <p>“A besta demoníaca que governa as profundezas do Labirinto da Floresta. Seu machado carrega o peso de mil almas.”</p>
+              <a href="resultados.html?categoria=monstros&q=Bafomé">Abrir Compêndio <span>→</span></a>
+            </div>
+          </article>
+
+          <article class="catalog-card">
+            <div class="card-media" style="--card-image: url('./assets/ifrit.jpg');" role="img" aria-label="Ifrit"><span class="card-level">MVP</span></div>
+            <div class="card-content">
+              <div class="card-meta"><span>♛</span><small>Fogo • Grande</small></div>
+              <h3>Ifrit</h3>
+              <p>“A própria encarnação das chamas de Thor. Catalogado com muita dificuldade e algumas queimaduras.”</p>
+              <a href="resultados.html?categoria=monstros&q=Ifrit">Abrir Compêndio <span>→</span></a>
+            </div>
+          </article>
+
+          <article class="catalog-card">
+            <div class="card-media" style="--card-image: url('./assets/drake.jpg');" role="img" aria-label="Drake"><span class="card-level">MVP</span></div>
+            <div class="card-content">
+              <div class="card-meta"><span>♛</span><small>Morto-vivo • Médio</small></div>
+              <h3>Drake</h3>
+              <p>“O capitão fantasma que se recusa a abandonar seu navio naufragado em Alberta.”</p>
+              <a href="resultados.html?categoria=monstros&q=Drake">Abrir Compêndio <span>→</span></a>
+            </div>
+          </article>
+        </div>
+
+        <a class="section-button" href="resultados.html">Explorar todos os compêndios <span>→</span></a>
+      </div>
+    </section>
+
+    <section class="world section-observed" id="mundo">
+      <div class="world-background" aria-hidden="true"></div>
+      <div class="world-layout container">
+        <div class="world-copy">
+          <p class="section-kicker">Um mundo para explorar</p>
+          <h2>Viaje por Rune-Midgard</h2>
+          <p>Descubra cidades, calabouços, campos, monstros e histórias que atravessaram gerações de aventureiros.</p>
+          <a class="primary-button" href="mundo.html">Conhecer o mundo <span>→</span></a>
+        </div>
+
+        <div class="world-cards">
+          <a href="resultados.html?categoria=mapas&q=Prontera"><span>01</span><strong>Prontera</strong><small>Capital de Rune-Midgard</small></a>
+          <a href="resultados.html?categoria=mapas&q=Glast+Heim"><span>02</span><strong>Glast Heim</strong><small>Ruínas de um reino perdido</small></a>
+          <a href="resultados.html?categoria=mapas&q=Geffen"><span>03</span><strong>Geffen</strong><small>A cidade da magia</small></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="guild section-observed" id="sleeping-forest">
+      <div class="container guild-layout">
+        <div class="guild-art" aria-hidden="true"><div class="guild-symbol">SF</div><span>Glast Heim is dead</span></div>
+
+        <div class="guild-copy">
+          <p class="section-kicker">Mais do que um banco de dados</p>
+          <h2>Sleeping Forest</h2>
+          <p>Conheça os membros, as personalidades, as relações e as jornadas da guilda enquanto ela avança por Rune-Midgard.</p>
+          <p>Vídeos de evolução, caçadas em grupo, conversas entre personagens, desafios contra MVPs e histórias construídas dentro do jogo.</p>
+          <a class="primary-button" href="sleepingforest/index.html">Entrar na área da guilda <span>→</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="about section-observed" id="sobre">
+      <div class="container">
+        <div class="section-heading centered">
+          <p class="section-kicker">Feito por aventureiros</p>
+          <h2>Um projeto criado para quem ama Ragnarok</h2>
+          <p>A PoringBase mistura informação prática, identidade visual, histórias da comunidade e o legado da Sleeping Forest.</p>
+        </div>
+
+        <div class="benefits-grid">
+          <article><span>▤</span><h3>Compêndios completos</h3><p>Fichas de monstros, itens, cartas, mapas e equipamentos.</p></article>
+          <article><span>✦</span><h3>Informações organizadas</h3><p>Filtros e páginas simples para encontrar respostas rapidamente.</p></article>
+          <article><span>♙</span><h3>Feito por jogadores</h3><p>Conteúdo pensado por quem conhece e vive o jogo.</p></article>
+          <article><span>♜</span><h3>Sleeping Forest</h3><p>Acompanhe as histórias, os membros e as conquistas da guilda.</p></article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-layout">
+      <div><strong>PoringBase</strong><p>O Compêndio de Rune-Midgard.</p></div>
+      <p>Projeto de fã sem vínculo oficial com a Gravity.</p>
+      <a href="#topo">Voltar ao topo ↑</a>
+    </div>
+  </footer>
+</body>
+</html>

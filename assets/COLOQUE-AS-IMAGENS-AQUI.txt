@@ -1,0 +1,6 @@
+hero-bg.jpg
+bafome.jpg
+ifrit.jpg
+drake.jpg
+world-bg.jpg
+sleeping-forest-bg.jpg
