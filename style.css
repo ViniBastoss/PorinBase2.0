@@ -444,12 +444,7 @@ img { max-width: 100%; display: block; }
 .world-layout { position: relative; z-index: 1; display: grid; grid-template-columns: minmax(0,.8fr) minmax(380px,1.2fr); gap: 70px; align-items: center; padding-block: 100px; }
 .world-copy { max-width: 500px; }
 .world-copy p:not(.section-kicker) { color: rgba(255,255,255,.74); }
-.world-cards { display: grid; gap: 14px; }
-.world-cards a { display: grid; grid-template-columns: 45px minmax(0,1fr); padding: 19px 22px; background: rgba(6,17,11,.62); border: 1px solid rgba(226,202,131,.22); backdrop-filter: blur(10px); transition: .18s ease; }
-.world-cards a:hover { background: rgba(30,60,46,.62); border-color: var(--gold-300); transform: translateX(-8px); }
-.world-cards span { grid-row: 1/span 2; color: var(--gold-300); font-family: var(--serif); }
-.world-cards strong { font-family: var(--serif); font-size: 1.16rem; }
-.world-cards small { color: rgba(255,255,255,.58); }
+
 
 /* GUILDA */
 .guild { padding: 110px 0; color: var(--paper); background: radial-gradient(circle at 25% 50%,rgba(77,128,104,.17),transparent 35%), linear-gradient(135deg,#08100c,#14271e); }
