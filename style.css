@@ -440,7 +440,7 @@ img { max-width: 100%; display: block; }
 
 /* MUNDO */
 .world { position: relative; min-height: 720px; display: grid; align-items: center; overflow: hidden; color: var(--white); background: var(--green-900); }
-.world-background { position: absolute; inset: 0; opacity: .5; background: linear-gradient(to right,rgba(4,11,8,.95),rgba(4,11,8,.48) 55%,rgba(4,11,8,.9)), url("./assets/world-bg.jpg") center/cover; }
+.world-background { position: absolute; inset: 0; opacity: .5; background: linear-gradient(to right,rgba(4,11,8,.95),rgba(4,11,8,.48) 55%,rgba(4,11,8,.9)), url("assets/novidades/mapaRag.png") center/contain no-repeat; }
 .world-layout { position: relative; z-index: 1; display: grid; grid-template-columns: minmax(0,.8fr) minmax(380px,1.2fr); gap: 70px; align-items: center; padding-block: 100px; }
 .world-copy { max-width: 500px; }
 .world-copy p:not(.section-kicker) { color: rgba(255,255,255,.74); }
