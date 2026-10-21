@@ -131,7 +131,7 @@ img { max-width: 100%; display: block; }
 
 .pb-news {
   padding: 78px 24px 88px;
-  outline: 2px solid red;
+  
 
 }
 
@@ -142,7 +142,6 @@ img { max-width: 100%; display: block; }
   grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   gap: 36px;
   align-items: stretch;
-    outline: 2px solid blue;
 
 }
 
