@@ -226,9 +226,7 @@ img { max-width: 100%; display: block; }
 }
 
 .pb-carousel__slide {
-    width: 100%;
-    min-width: 0;
-    flex-shrink: 0;
+    min-width: 100%;
     aspect-ratio: 5 / 3;
     background: #0d2118;
 }
