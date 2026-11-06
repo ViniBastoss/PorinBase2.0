@@ -1,0 +1,52 @@
+[
+  {
+    "id": 504,
+    "aegisName": "White_Potion",
+    "slug": "pocao-branca",
+    "name": {
+      "ptBR": "Poção Branca",
+      "sourceName": "White Potion"
+    },
+    "category": "consumable",
+    "sourceType": "Healing",
+    "subcategory": "healing",
+    "weight": 15,
+    "prices": {
+      "currency": "Zeny",
+      "buy": 1200,
+      "sell": 600,
+      "sellIsDerived": true
+    },
+    "effect": {
+      "kind": "hp-recovery",
+      "hp": {
+        "min": 325,
+        "max": 405
+      },
+      "sp": null,
+      "displayText": "Recupera entre 325 e 405 HP."
+    },
+    "equipment": null,
+    "visuals": {
+      "icon": null,
+      "artwork": null,
+      "preferredBackground": "transparent",
+      "assetStatus": "pending"
+    },
+    "source": {
+      "dataset": "rathena-pre-re-items-usable",
+      "raw": {
+        "Weight": 150,
+        "Buy": 1200,
+        "Sell": null,
+        "Script": "itemheal rand(325,405),0;"
+      },
+      "notes": "Sell não está explicitado no registro-base; 600z é calculado pela regra documentada de metade do preço de compra. Weight 150 é exibido como peso 15."
+    },
+    "verification": {
+      "status": "verified-against-source",
+      "checkedAt": "2026-11-06"
+    },
+    "editorialDescription": "Uma poção de cura muito utilizada por aventureiros em jornadas perigosas."
+  }
+]

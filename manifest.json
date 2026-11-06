@@ -1,0 +1,44 @@
+{
+  "schemaVersion": "1.0.0",
+  "project": "PoringBase",
+  "game": "Ragnarok Online",
+  "ruleset": "classic-pre-renewal",
+  "datasetProfile": "generic-classic-baseline",
+  "language": "pt-BR",
+  "createdAt": "2026-11-06",
+  "description": "Base inicial normalizada para a PoringBase. Dados de referência Pre-Renewal; traduções e textos editoriais são mantidos separados dos valores de origem.",
+  "sources": [
+    {
+      "id": "rathena-pre-re-items-usable",
+      "name": "rAthena — Pre-Renewal usable items",
+      "url": "https://raw.githubusercontent.com/rathena/rathena/master/db/pre-re/item_db_usable.yml",
+      "repository": "https://github.com/rathena/rathena",
+      "license": "GPL-3.0-or-later",
+      "scope": "IDs, nomes-base, tipo, preço de compra, peso e script de uso de consumíveis."
+    },
+    {
+      "id": "rathena-pre-re-monsters",
+      "name": "rAthena — Pre-Renewal monsters",
+      "url": "https://raw.githubusercontent.com/rathena/rathena/master/db/pre-re/mob_db.yml",
+      "repository": "https://github.com/rathena/rathena",
+      "license": "GPL-3.0-or-later",
+      "scope": "IDs, nomes-base, nível, HP, ataque, defesa, atributos, raça, tamanho, elemento, classe e drops de monstros."
+    }
+  ],
+  "dataConventions": {
+    "identifiers": "Use id como identificador numérico de origem e aegisName como chave estável para relacionar registros. Não use o nome traduzido como chave.",
+    "missingValues": "Use null quando o dado ainda não foi confirmado. Não transforme ausência de informação em zero.",
+    "weight": "O campo weight representa o peso exibido no jogo. O valor bruto Weight do rAthena é dividido por 10.",
+    "dropRate": "Guarde rate como inteiro original da fonte. No padrão documentado do rAthena, 10000 equivale a 100%; percentual para exibição = rate / 100.",
+    "prices": "Valores em Zeny. Quando o preço de venda for derivado da regra da fonte, marque sellIsDerived como true.",
+    "localization": "name.ptBR é a tradução/apresentação da PoringBase; name.sourceName conserva o nome de referência em inglês.",
+    "images": "Os dados do jogo não incluem automaticamente os arquivos gráficos. Caminhos de ícones/arte ficam em visuals e podem permanecer null até a imagem ser obtida, tratada e licenciada."
+  },
+  "knownLimitations": [
+    "Esta é uma base inicial, não um banco completo de Ragnarok.",
+    "A base rAthena é uma referência técnica Pre-Renewal; não representa universalmente todos os servidores clássicos.",
+    "Spawns por mapa e mapas serão preenchidos após validar os arquivos de spawn correspondentes.",
+    "A tabela elemental será adicionada após validação independente; não exibir afinidades calculadas enquanto ela estiver pendente.",
+    "Antes de publicar uma cópia ou adaptação dos dados, revisar as obrigações da licença GPL-3.0-or-later e manter os créditos necessários."
+  ]
+}

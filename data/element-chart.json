@@ -1,0 +1,9 @@
+{
+  "ruleset": "classic-pre-renewal",
+  "status": "pending-validation",
+  "attackElements": ["neutral", "water", "earth", "fire", "wind", "poison", "holy", "dark", "ghost", "undead"],
+  "targetElements": ["neutral", "water", "earth", "fire", "wind", "poison", "holy", "dark", "ghost", "undead"],
+  "levels": [1, 2, 3, 4],
+  "matrix": [],
+  "notes": "Não exibir percentuais de afinidade até preencher e validar a matriz de dano elemental Pre-Renewal. O elemento e nível do monstro ficam em monsters.json; as afinidades são calculadas a partir desta tabela global."
+}

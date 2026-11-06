@@ -1,0 +1,224 @@
+[
+  {
+    "id": 1002,
+    "aegisName": "PORING",
+    "slug": "poring",
+    "name": {
+      "ptBR": "Poring",
+      "sourceName": "Poring"
+    },
+    "classification": {
+      "class": "normal",
+      "mvpExp": 0,
+      "mvpDrops": []
+    },
+    "stats": {
+      "level": 1,
+      "hp": 50,
+      "sp": 1,
+      "attack": {
+        "min": 7,
+        "max": 10
+      },
+      "defense": 0,
+      "magicDefense": 5,
+      "baseExp": 2,
+      "jobExp": 1
+    },
+    "attributes": {
+      "str": 1,
+      "agi": 1,
+      "vit": 1,
+      "int": 0,
+      "dex": 6,
+      "luk": 30
+    },
+    "biology": {
+      "race": "plant",
+      "size": "medium",
+      "element": "water",
+      "elementLevel": 1
+    },
+    "combat": {
+      "attackRange": 1,
+      "skillRange": 10,
+      "chaseRange": 12
+    },
+    "drops": [
+      {
+        "itemAegisName": "Jellopy",
+        "kind": "normal",
+        "rate": 7000,
+        "sourceOrder": 1
+      },
+      {
+        "itemAegisName": "Knife_",
+        "kind": "normal",
+        "rate": 100,
+        "sourceOrder": 2
+      },
+      {
+        "itemAegisName": "Sticky_Mucus",
+        "kind": "normal",
+        "rate": 400,
+        "sourceOrder": 3
+      },
+      {
+        "itemAegisName": "Apple",
+        "kind": "normal",
+        "rate": 1000,
+        "sourceOrder": 4
+      },
+      {
+        "itemAegisName": "Empty_Bottle",
+        "kind": "normal",
+        "rate": 1500,
+        "sourceOrder": 5
+      },
+      {
+        "itemAegisName": "Apple",
+        "kind": "normal",
+        "rate": 150,
+        "sourceOrder": 6
+      },
+      {
+        "itemAegisName": "Unripe_Apple",
+        "kind": "normal",
+        "rate": 20,
+        "sourceOrder": 7
+      },
+      {
+        "itemAegisName": "Poring_Card",
+        "kind": "normal",
+        "rate": 1,
+        "sourceOrder": 8,
+        "stealProtected": true
+      }
+    ],
+    "visuals": {
+      "cardFront": null,
+      "monsterArt": null,
+      "preferredBackground": "transparent",
+      "assetStatus": "pending"
+    },
+    "source": {
+      "dataset": "rathena-pre-re-monsters",
+      "notes": "Str, Agi e Vit não aparecem explicitamente no registro; foram preenchidos com o padrão 1 documentado pelo rAthena. Defense segue o padrão 0. SP segue o padrão 1. Os demais campos ausentes permanecem null."
+    },
+    "verification": {
+      "status": "verified-against-source",
+      "checkedAt": "2026-11-06"
+    }
+  },
+  {
+    "id": 1259,
+    "aegisName": "GRYPHON",
+    "slug": "grifo",
+    "name": {
+      "ptBR": "Grifo",
+      "sourceName": "Gryphon"
+    },
+    "classification": {
+      "class": "boss",
+      "mvpExp": 0,
+      "mvpDrops": []
+    },
+    "stats": {
+      "level": 72,
+      "hp": 27800,
+      "sp": null,
+      "attack": {
+        "min": 880,
+        "max": 1260
+      },
+      "defense": 35,
+      "magicDefense": 35,
+      "baseExp": 5896,
+      "jobExp": 4400
+    },
+    "attributes": {
+      "str": 68,
+      "agi": 95,
+      "vit": 78,
+      "int": 65,
+      "dex": 115,
+      "luk": 75
+    },
+    "biology": {
+      "race": "brute",
+      "size": "large",
+      "element": "wind",
+      "elementLevel": 4
+    },
+    "combat": {
+      "attackRange": 1,
+      "skillRange": 10,
+      "chaseRange": 12
+    },
+    "drops": [
+      {
+        "itemAegisName": "Talon_Of_Griffin",
+        "kind": "normal",
+        "rate": 2500,
+        "sourceOrder": 1
+      },
+      {
+        "itemAegisName": "Brigan",
+        "kind": "normal",
+        "rate": 5335,
+        "sourceOrder": 2
+      },
+      {
+        "itemAegisName": "Soft_Feather",
+        "kind": "normal",
+        "rate": 120,
+        "sourceOrder": 3
+      },
+      {
+        "itemAegisName": "Guisarme_",
+        "kind": "normal",
+        "rate": 1500,
+        "sourceOrder": 4
+      },
+      {
+        "itemAegisName": "Pole_Axe",
+        "kind": "normal",
+        "rate": 1,
+        "sourceOrder": 5
+      },
+      {
+        "itemAegisName": "Oridecon",
+        "kind": "normal",
+        "rate": 185,
+        "sourceOrder": 6
+      },
+      {
+        "itemAegisName": "Rough_Wind",
+        "kind": "normal",
+        "rate": 150,
+        "sourceOrder": 7
+      },
+      {
+        "itemAegisName": "Gryphon_Card",
+        "kind": "normal",
+        "rate": 1,
+        "sourceOrder": 8,
+        "stealProtected": true
+      }
+    ],
+    "visuals": {
+      "cardFront": null,
+      "monsterArt": null,
+      "preferredBackground": "transparent",
+      "assetStatus": "pending"
+    },
+    "source": {
+      "dataset": "rathena-pre-re-monsters",
+      "notes": "No rAthena Pre-Renewal, Gryphon aparece como Class Boss, não como MVP; os valores fictícios da arte-conceito não devem substituir estes dados."
+    },
+    "verification": {
+      "status": "verified-against-source",
+      "checkedAt": "2026-11-06"
+    }
+  }
+]
