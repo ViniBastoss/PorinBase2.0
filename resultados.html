@@ -3,52 +3,79 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Resultados — PoringBase</title>
+  <meta name="description" content="Pesquise os registros disponíveis no compêndio PoringBase.">
+  <title>Compêndios — PoringBase</title>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <style>
-    :root { --ink:#17211d; --paper:#f4efe5; --white:#fff; --green:#173426; --gold:#c49a45; --serif:"Cinzel",Georgia,serif; --sans:"Inter",sans-serif; }
-    * { box-sizing:border-box; }
-    body { margin:0; color:var(--ink); background:var(--paper); font-family:var(--sans); }
-    header { padding:20px; color:var(--white); background:var(--green); }
-    header div, main { width:min(100% - 32px,1060px); margin-inline:auto; }
-    header div { display:flex; align-items:center; justify-content:space-between; gap:20px; }
-    a { color:inherit; }
-    .brand { display:inline-flex; align-items:center; text-decoration:none; }
-    .brand-logo { display:block; width:min(100%, 290px); height:auto; }
-    main { padding:70px 0; }
-    h1 { margin:0 0 12px; font-family:var(--serif); font-size:clamp(2.2rem,6vw,4rem); }
-    .query-box { margin-top:30px; padding:24px; background:var(--white); border-top:3px solid var(--gold); box-shadow:0 16px 40px rgba(23,33,29,.1); }
-    code { color:#6d4a0e; }
-  </style>
+  <link rel="stylesheet" href="resultados.css">
+  <script src="resultados.js" defer></script>
 </head>
 <body>
-  <header>
-    <div>
-      <a class="brand" href="index.html" aria-label="Voltar para a página inicial"><img class="brand-logo" src="./assets/brand-poringbase.png" alt="Poring Base — O Compêndio de Rune-Midgard"></a>
-      <a href="index.html">← Voltar para a home</a>
+  <header class="results-header">
+    <div class="results-header__inner">
+      <a class="brand" href="index.html" aria-label="PoringBase — voltar ao início">
+        <img src="./assets/brand-poringbase.png" alt="PoringBase — O Compêndio de Rune-Midgard">
+      </a>
+      <a class="back-link" href="index.html">← Voltar ao início</a>
     </div>
   </header>
 
-  <main>
-    <p>Pesquisa no compêndio</p>
-    <h1 id="result-title">Resultados</h1>
+  <main class="results-main">
+    <nav class="breadcrumb" aria-label="Navegação estrutural">
+      <a href="index.html">Início</a>
+      <span aria-hidden="true">/</span>
+      <span aria-current="page">Compêndios</span>
+    </nav>
 
-    <section class="query-box">
-      <p id="result-description"></p>
-      <p>Esta página já recebe a categoria e o termo pesquisado. Depois, você pode usar esses valores para filtrar seu JSON de monstros, itens, cartas ou mapas.</p>
-      <p>Exemplo técnico: <code>resultados.html?categoria=monstros&amp;q=Bafomé</code></p>
+    <section class="results-intro" aria-labelledby="page-title">
+      <p class="eyebrow">Arquivo de Rune-Midgard</p>
+      <h1 id="page-title">Compêndios</h1>
+      <p class="intro-copy">Consulte os registros catalogados e encontre informações sobre as criaturas de Rune-Midgard.</p>
     </section>
+
+    <form class="results-search" id="results-search" action="resultados.html" method="get" role="search">
+      <label class="sr-only" for="category">Categoria</label>
+      <select id="category" name="categoria">
+        <option value="todos">Todas as categorias</option>
+        <option value="monstros">Monstros</option>
+        <option value="itens">Itens</option>
+        <option value="cartas">Cartas</option>
+        <option value="mapas">Mapas</option>
+      </select>
+
+      <label class="sr-only" for="query">Termo de pesquisa</label>
+      <input id="query" name="q" type="search" placeholder="Ex.: Bafomé, Ifrit ou Drake" autocomplete="off">
+      <button type="submit">Pesquisar <span aria-hidden="true">⌕</span></button>
+    </form>
+
+    <section class="catalog-results" aria-labelledby="results-heading">
+      <div class="results-toolbar">
+        <div>
+          <p class="section-kicker">Biblioteca</p>
+          <h2 id="results-heading">Registros encontrados</h2>
+        </div>
+        <p class="results-count" id="results-count" aria-live="polite"></p>
+      </div>
+
+      <div class="results-grid" id="results-grid"></div>
+
+      <div class="empty-state" id="empty-state" hidden>
+        <span class="empty-state__symbol" aria-hidden="true">⌕</span>
+        <h3>Nenhum registro encontrado</h3>
+        <p id="empty-message">Tente outro termo ou selecione uma categoria diferente.</p>
+        <a href="resultados.html">Limpar pesquisa</a>
+      </div>
+    </section>
+
+    <p class="catalog-note">O catálogo está em expansão. Os registros exibidos correspondem ao conteúdo atualmente publicado nesta versão da PoringBase.</p>
   </main>
 
-  <script>
-    const params = new URLSearchParams(window.location.search);
-    const category = params.get('categoria') || params.get('tipo') || 'todos';
-    const query = params.get('q') || 'nenhum termo';
-
-    document.querySelector('#result-title').textContent = query;
-    document.querySelector('#result-description').textContent = `Categoria: ${category} — termo pesquisado: ${query}`;
-  </script>
+  <footer class="results-footer">
+    <span>PoringBase</span>
+    <span>O Compêndio de Rune-Midgard</span>
+    <a href="index.html">Voltar à página inicial ↑</a>
+  </footer>
 </body>
 </html>
