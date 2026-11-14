@@ -2,7 +2,7 @@
 'use strict';
 
 // Registros que já aparecem no catálogo da página inicial.
-const catalogRecords = []
+let catalogRecords = [];
 
 
 const searchForm = document.querySelector('#results-search');
@@ -102,7 +102,7 @@ function renderResults() {
       'Ainda não há registros publicados nesta categoria. No momento, o catálogo disponível nesta página reúne monstros.';
   } else if (total === 0) {
     emptyMessage.textContent =
-      'Não encontramos esse termo no catálogo atual. Confira a escrita ou tente pesquisar por Bafomé, Ifrit ou Drake.';
+      'Não encontramos esse termo no catálogo.';
   }
 }
 
