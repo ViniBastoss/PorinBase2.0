@@ -2,35 +2,8 @@
 'use strict';
 
 // Registros que já aparecem no catálogo da página inicial.
-const catalogRecords = [
-  {
-    name: 'Bafomé',
-    category: 'monstros',
-    badge: 'MVP',
-    classification: 'Sombrio • Grande',
-    description: 'A besta demoníaca que governa as profundezas do Labirinto da Floresta. Seu machado carrega o peso de mil almas.',
-    image: './assets/bafome.jpg',
-    searchableText: 'bafome bafomé monstro mvp sombrio grande labirinto floresta',
-  },
-  {
-    name: 'Ifrit',
-    category: 'monstros',
-    badge: 'MVP',
-    classification: 'Fogo • Grande',
-    description: 'A própria encarnação das chamas de Thor. Catalogado com muita dificuldade e algumas queimaduras.',
-    image: './assets/ifrit.jpg',
-    searchableText: 'ifrit monstro mvp fogo grande thor chamas',
-  },
-  {
-    name: 'Drake',
-    category: 'monstros',
-    badge: 'MVP',
-    classification: 'Morto-vivo • Médio',
-    description: 'O capitão fantasma que se recusa a abandonar seu navio naufragado em Alberta.',
-    image: './assets/drake.jpg',
-    searchableText: 'drake monstro mvp morto-vivo medio médio alberta navio fantasma',
-  },
-];
+const catalogRecords = []
+
 
 const searchForm = document.querySelector('#results-search');
 const categorySelect = document.querySelector('#category');
@@ -178,4 +151,47 @@ searchForm.addEventListener('submit', (event) => {
 
 categorySelect.addEventListener('change', renderResults);
 
-loadSearchFromUrl();
+
+async function loadCatalog() {
+  resultsCount.textContent = "Carregando monstros...";
+
+  try {
+    const response = await fetch("./data/monsters.json");
+
+    if (!response.ok) {
+      throw new Error(`Erro HTTP: ${response.status}`);
+    }
+
+    const monsters = await response.json();
+
+    catalogRecords = monsters.map((monster) => ({
+      name: monster.name.ptBR ?? monster.name.sourceName,
+      category: "monstros",
+      badge: monster.classification.class === "boss"
+        ? "Chefe"
+        : "Monstro",
+      classification: [
+        `Nível ${monster.stats.level}`,
+        monster.biology.element,
+        monster.biology.size
+      ].join(" • "),
+      description: `HP: ${monster.stats.hp ?? "—"} | EXP Base: ${monster.stats.baseExp ?? "—"}`,
+      image: monster.visuals.monsterArt,
+      searchableText: `${monster.name.sourceName} ${monster.aegisName} ${monster.slug}`
+    }));
+
+    loadSearchFromUrl();
+
+  } catch (error) {
+    console.error("Falha ao carregar catálogo:", error);
+    resultsGrid.replaceChildren();
+    resultsGrid.hidden = true;
+    emptyState.hidden = false;
+    resultsCount.textContent = "Erro ao carregar catálogo";
+    emptyMessage.textContent =
+      "Verifique o caminho do JSON e se o Live Server está ativo.";
+  }
+}
+
+
+loadCatalog();
