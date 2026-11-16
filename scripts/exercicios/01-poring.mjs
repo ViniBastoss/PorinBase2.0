@@ -5,15 +5,25 @@ const exemplo = {
     Hp: 50
 }
 
-function normalizarMonstro(monstro) {
-    return {
+const grifo = {
+    Id: 1259,
+    Name: "Gryphon",
+    Level: 72,
+    Hp: 27800
+}
+
+const normalizarMonstro = (monstro) => {
+    return { 
         id: monstro.Id,
         name: monstro.Name,
         level: monstro.Level,
         hp: monstro.Hp
     };
-}
+};
 
-const resultado = normalizarMonstro(exemplo);
-console.log(resultado)
-console.log(exemplo.Name)
+const resultado = normalizarMonstro(exemplo)
+console.log(resultado);
+console.log(exemplo.Hp);
+const resultado2 = normalizarMonstro(grifo);
+console.log(resultado2);
+console.log(grifo.Hp);
