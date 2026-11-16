@@ -1,9 +1,19 @@
 const exemplo = {
-    id: 1002,
+    Id: 1002,
     Name: "Poring",
     Level: 1,
     Hp: 50
 }
 
-console.log(exemplo.Name);
-console.log(exemplo.Hp);
+function normalizarMonstro(monstro) {
+    return {
+        id: monstro.Id,
+        name: monstro.Name,
+        level: monstro.Level,
+        hp: monstro.Hp
+    };
+}
+
+const resultado = normalizarMonstro(exemplo);
+console.log(resultado)
+console.log(exemplo.Name)
