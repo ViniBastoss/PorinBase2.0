@@ -1,0 +1,23 @@
+{
+  "name": "porinbase2.0",
+  "version": "1.0.0",
+  "description": "Projeto PoringBase + Sleeping Forest",
+  "main": "resultados.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ViniBastoss/PorinBase2.0.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ViniBastoss/PorinBase2.0/issues"
+  },
+  "homepage": "https://github.com/ViniBastoss/PorinBase2.0#readme",
+  "devDependencies": {
+    "yaml": "^2.9.1"
+  }
+}
