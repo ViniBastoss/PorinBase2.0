@@ -20,10 +20,8 @@ const normalizarMonstro = (monstro) => {
         hp: monstro.Hp
     };
 };
+const monstros =[exemplo, grifo];
 
-const resultado = normalizarMonstro(exemplo)
-console.log(resultado);
-console.log(exemplo.Hp);
-const resultado2 = normalizarMonstro(grifo);
-console.log(resultado2);
-console.log(grifo.Hp);
+const normalizados = monstros.map(normalizarMonstro);
+console.log(normalizados)
+

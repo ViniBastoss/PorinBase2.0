@@ -1,0 +1,14 @@
+Header:
+  Type: MOB_DB
+  Version: 5
+
+Body:
+  - Id: 1002
+    Name: Poring
+    Level: 1
+    Hp: 50
+
+  - Id: 1259
+    Name: Gryphon
+    Level: 72
+    Hp: 27800
