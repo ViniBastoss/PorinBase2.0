@@ -4,11 +4,13 @@ Header:
 
 Body:
   - Id: 1002
+    AegisName: PORING
     Name: Poring
     Level: 1
     Hp: 50
 
   - Id: 1259
+    AegisName: G
     Name: Gryphon
     Level: 72
     Hp: 27800

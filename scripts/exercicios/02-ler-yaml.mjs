@@ -7,6 +7,7 @@ const dados = parse(conteudo);
 const normalizarMonstro = (monstro) => {
     return { 
         id: monstro.Id,
+        aegisName: monstro.AegisName,
         name: monstro.Name,
         level: monstro.Level,
         hp: monstro.Hp
