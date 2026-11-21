@@ -1,0 +1,14 @@
+[
+  {
+    "id": 1002,
+    "name": "Poring",
+    "level": 1,
+    "hp": 50
+  },
+  {
+    "id": 1259,
+    "name": "Gryphon",
+    "level": 72,
+    "hp": 27800
+  }
+]
