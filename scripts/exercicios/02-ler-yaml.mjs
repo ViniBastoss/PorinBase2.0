@@ -1,5 +1,6 @@
 import { readFile, writeFile } from "node:fs/promises";
 import { parse } from "yaml";
+console.log(typeof parse); // function
 const conteudo = await readFile("scripts/exercicios/monstros-amostra.yml","utf8");
 const dados = parse(conteudo);
 
